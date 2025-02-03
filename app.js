@@ -92,135 +92,68 @@ document.addEventListener("DOMContentLoaded", function () {
   
   //contact form
 // JavaScript Validation and Submission
-const form = document.getElementById("contactForm");
-const formStatus = document.getElementById("formStatus");
+  const form = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
 
-form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent default form submission
 
     // Form Fields
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
-    const message = document.getElementById("message").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-    // Validate Fields
+      // Validate Fields
     if (name === "" || email === "" || phone === "" || message === "") {
-        formStatus.textContent = "All fields are required.";
-        formStatus.style.display = "block";
-        return;
-    }
+          formStatus.textContent = "All fields are required.";
+          formStatus.style.display = "block";
+          return;
+      }
 
-    // Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        formStatus.textContent = "Please enter a valid email address.";
-        formStatus.style.display = "block";
-        return;
-    }
+      // Email Validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+          formStatus.textContent = "Please enter a valid email address.";
+          formStatus.style.display = "block";
+          return;
+      }
 
     // Phone Validation (optional, you can define a regex for valid phone numbers)
     const phoneRegex = /^\+?[0-9]{10,15}$/; //
     if (!phoneRegex.test(phone)) {
-        formStatus.textContent = "Please enter a valid phone number.";
-        formStatus.style.display = "block";
-        return;
-    }
+          formStatus.textContent = "Please enter a valid phone number.";
+          formStatus.style.display = "block";
+          return;
+      }
 
-    // If validation passes, submit the form
-    formStatus.style.display = "none";
+      // If validation passes, submit the form
+      formStatus.style.display = "none";
 
     // Send form data using fetch (to Web3Forms API)
-    fetch(form.action, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            access_key: "894ff7de-392b-4c72-8b9f-6eabdefbb3de",
-            name,
-            email,
-            phone,
-            message,
-        }),
-    })
-        .then((response) => {
-            if (response.ok) {
-                alert("Your message has been sent successfully!");
+      fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+              access_key: "894ff7de-392b-4c72-8b9f-6eabdefbb3de",
+              name,
+              email,
+              phone,
+              message,
+          }),
+      })
+          .then((response) => {
+              if (response.ok) {
+                  alert("Your message has been sent successfully!");
                 form.reset();// Reset the form
-            } else {
-                alert("There was an error sending your message. Please try again later.");
-            }
-        })
-        .catch(() => {
-            alert("There was an error sending your message. Please try again later.");
-        });
-});
-
-     //enquairyform
-
-     document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("enquiryForm");
-        const formStatus = document.getElementById("formStatus");
-    
-        form.addEventListener("submit", (event) => {
-            event.preventDefault(); // Prevent default form submission
-    
-            // Get field values
-            const name = document.getElementById("name").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const email = document.getElementById("email").value.trim().toLowerCase();
-            const service = document.getElementById("service").value;
-            const comments = document.getElementById("comments").value.trim();
-    
-            // Validation
-            if (!name || !phone || !email || !service) {
-                formStatus.textContent = "Please fill out all required fields.";
-                formStatus.style.display = "block";
-                return;
-            }
-    
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                formStatus.textContent = "Please enter a valid email address.";
-                formStatus.style.display = "block";
-                return;
-            }
-    
-            // Prepare form data for submission
-            const formData = {
-                access_key: "894ff7de-392b-4c72-8b9f-6eabdefbb3de",
-                name,
-                phone,
-                email,
-                service,
-                comments,
-            };
-    
-            // Send form data
-            fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        formStatus.textContent = "Your message has been sent successfully!";
-                        formStatus.style.color = "green";
-                        formStatus.style.display = "block";
-                        form.reset(); // Reset form fields
-                    } else {
-                        formStatus.textContent = "There was an error sending your message. Please try again.";
-                        formStatus.style.color = "red";
-                        formStatus.style.display = "block";
-                    }
-                })
-                .catch(() => {
-                    formStatus.textContent = "There was an error sending your message. Please try again.";
-                    formStatus.style.color = "red";
-                    formStatus.style.display = "block";
-                });
-        });
-    });
+              } else {
+                  alert("There was an error sending your message. Please try again later.");
+              }
+          })
+          .catch(() => {
+              alert("There was an error sending your message. Please try again later.");
+          });
+  });
 
 
 // Initialize ScrollReveal

@@ -60,6 +60,7 @@
             padding: 10px;
             text-align: center;
             transition: 0.3s;
+           background: rgba(0, 0, 255, 0.071);
         }
         .product img {
             width: 100%;

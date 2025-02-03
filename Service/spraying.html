@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>AG Harvesting Ltd</title>
       <link rel="stylesheet" href="service.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
@@ -65,9 +66,8 @@
         <p>At <strong>AG Harvesting Kenya Ltd</strong>, we are revolutionizing farm management in Kenya with <strong>advanced agricultural spraying services</strong>. Our mission is to help farmers increase crop yields, protect their investments, and embrace modern farming methods. By combining cutting-edge machinery, skilled operators, and a commitment to excellence, we make crop protection hassle-free and cost-effective.</p>
     </section>
       
-      <main class="serv">
-        <div>
-            
+    <main class="serv">
+      <div> 
             <section class="content">
                 <h2>Why Farmers Need Us</h2>
                 <ul>
@@ -114,23 +114,29 @@
           <!-- Sidebar Section -->
           <aside class="sidebar">
             <form class="enquiry-form" id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
-              <h2>Enquire Now</h2>
-              <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
-              <input type="text" name="name" placeholder="Full Name" required>
-              <input type="tel" name="phone" placeholder="Phone Number" required>
-              <input type="email" name="email" placeholder="Email Address" required>
-              <select name="service">
-                <option>Select Service</option>
-                <option>Maize spraying</option>
-                <option>Grass silaging</option>
-                <option>silage baling</option>
-                <option>forlage harvester repiar</option>
-              </select>
-              <textarea name="comments" placeholder="Comments"></textarea>
-              <button type="submit">Click to Submit</button>
+                <h2>Enquire Now</h2>
+                <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
+        
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+        
+                <!-- Phone Input Field with Country Code -->
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+        
+                <select id="service" name="service">
+                    <option value="">Select Service</option>
+                    <option>Maize spraying</option>
+                    <option>Grass silaging</option>
+                    <option>silage baling</option>
+                    <option>forlage harvester repiar</option>
+                </select>
+        
+                <textarea id="comments" name="comments" placeholder="Comments"></textarea>
+                
+                <button type="submit">Click to Submit</button>
             </form>
-    
-              
+           
               <!-- Weather Section -->
               <div class="weather">
                 <h2>Weather</h2>
@@ -154,14 +160,9 @@
                 </blockquote>
               </div>
             </aside>
-          
+        </div>
+      </main>
       
-    
-    
-       </div>
-    </section>
-    </div>
-    </main>
     <section class="call-to-action">
       <h2>Let’s Work Together</h2>
       <p>Trust AG HARVESTING KENYA LTD to revolutionize your silage-making process. Contact us today to learn more about our harvesting, baling, and silage education services. Together, let’s build a future where every Kenyan farmer thrives—rain or shine.</p>
@@ -178,10 +179,6 @@
                   <img src="img/trac2.jpg" alt="Image 3">
                 </div>
               </section>
-            </main>
-          
-        </div>
-      </main>
     
       <div class="whatsapp-btn-container">
         <a class="whatsapp-btn" href="https://wa.me/254757003239"><i class="fab fa-whatsapp"></i></a>
@@ -199,7 +196,7 @@
       <div class="social-media">
         <h4>Social Media</h4>
         <ul>
-          <a href="http://www.facebook.com/denoh.mugambi.92"><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
           <a href=""><i class="fa-brands fa-twitter"></i></a>
           <a href=""><i class="fa-brands fa-instagram"></i></a>
           <a ><i class="fa-brands fa-youtube"></i></a>
@@ -240,8 +237,9 @@
     </div>
   </footer>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="../app.js"></script>
-  
+  <script src="sevice.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   
     </body>
     </html>
     

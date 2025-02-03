@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>AG Harvesting Ltd</title>
       <link rel="stylesheet" href="service.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
@@ -62,15 +63,12 @@
         <p>Your Best Partner for Silage Services in Kenya</p>
       </header>
 
+      <section class="content">
+          <p>At <strong>AG Harvesting Kenya Ltd</strong>, we bring efficiency and professionalism to hay baling, ensuring your forage is expertly handled and preserved for optimal quality. Whether you need square or round bales, our advanced machinery and skilled team provide reliable solutions tailored to your farm's needs.</p>
+      </section>
+                  
       <main class="serv">
         <div>
-            <main class="containe">
-                <section class="content">
-                    <p>At <strong>AG Harvesting Kenya Ltd</strong>, we bring efficiency and professionalism to hay baling, ensuring your forage is expertly handled and preserved for optimal quality. Whether you need square or round bales, our advanced machinery and skilled team provide reliable solutions tailored to your farm's needs.</p>
-                </section>
-                  
-                
-        
                 <section class="content">
                     <h2>Why Farmers Choose Us</h2>
                     <ul>
@@ -114,31 +112,36 @@
                         <li>Tedding: Aerate and dry grass effectively.</li>
                         <li>Bale Carting: Safe and efficient bale transportation.</li>
                     </ul>
-                </section>
-        
-            
-            </main>
-
+                  </section>
         </div>
         <div>
           <!-- Sidebar Section -->
           <aside class="sidebar">
             <form class="enquiry-form" id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
-              <h2>Enquire Now</h2>
-              <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
-              <input type="text" name="name" placeholder="Full Name" required>
-              <input type="tel" name="phone" placeholder="Phone Number" required>
-              <input type="email" name="email" placeholder="Email Address" required>
-              <select name="service">
-                <option>Select Service</option>
-                <option>square bales</option>
-                <option>round bales</option>
-                <option>Wrapping</option>
-                <option>Mowing</option>
-              </select>
-              <textarea name="comments" placeholder="Comments"></textarea>
-              <button type="submit">Click to Submit</button>
+                <h2>Enquire Now</h2>
+                <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
+        
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+        
+                <!-- Phone Input Field with Country Code -->
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+        
+                <select id="service" name="service">
+                    <option value="">Select Service</option>
+                    <option>square bales</option>
+                    <option>round bales</option>
+                    <option>Wrapping</option>
+                    <option>Mowing</option>
+                </select>
+        
+                <textarea id="comments" name="comments" placeholder="Comments"></textarea>
+                
+                <button type="submit">Click to Submit</button>
             </form>
+        
+          
     
               
               <!-- Weather Section -->
@@ -163,35 +166,26 @@
                   <cite>- Eng.DENIS MUGAMBI</cite>
                 </blockquote>
               </div>
-            </aside>
-          
-      
-    
-    
-       </div>
-    </section>
-    </div>
-    </main>
+          </aside>
+        </div>
+      </main>
     <section class="call-to-action">
       <h2>Let’s Work Together</h2>
       <p>Trust AG HARVESTING KENYA LTD to revolutionize your silage-making process. Contact us today to learn more about our harvesting, baling, and silage education services. Together, let’s build a future where every Kenyan farmer thrives—rain or shine.</p>
       <p><strong>AG HARVESTING KENYA LTD: Your Silage Partner of Choice.</strong></p>
     </section>
              <!-- Gallery Section -->
-              <section class="gallery">
-                <div class="container">
-                <h2>Gallery</h2>
-              </div>
-                <div class="gallery-images">
-                  <img src="img/trac3.jpg" alt="Image 1">
-                  <img src="img/trac1.jpg" alt="Image 2">
-                  <img src="img/trac2.jpg" alt="Image 3">
-                </div>
-              </section>
-            </main>
-          
+      <section class="gallery">
+        <div class="container">
+        <h2>Gallery</h2>
+      </div>
+        <div class="gallery-images">
+          <img src="img/trac3.jpg" alt="Image 1">
+          <img src="img/trac1.jpg" alt="Image 2">
+          <img src="img/trac2.jpg" alt="Image 3">
         </div>
-      </main>
+      </section>
+            
     
       <div class="whatsapp-btn-container">
         <a class="whatsapp-btn" href="https://wa.me/254757003239"><i class="fab fa-whatsapp"></i></a>
@@ -250,7 +244,8 @@
     </div>
   </footer>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="app.js"></script>
+  <script src="sevice.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   
     </body>
     </html>

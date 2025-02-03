@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>AG Harvesting Ltd</title>
       <link rel="stylesheet" href="service.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
@@ -135,21 +136,31 @@
           <!-- Sidebar Section -->
           <aside class="sidebar">
             <form class="enquiry-form" id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
-              <h2>Enquire Now</h2>
-              <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
-              <input type="text" name="name" placeholder="Full Name" required>
-              <input type="tel" name="phone" placeholder="Phone Number" required>
-              <input type="email" name="email" placeholder="Email Address" required>
-              <select name="service">
-                <option>Select Service</option>
-                <option>Maize corn silaging</option>
-                <option>Grass silaging</option>
-                <option>silage baling</option>
-                <option>forlage harvester repiar</option>
-              </select>
-              <textarea name="comments" placeholder="Comments"></textarea>
-              <button type="submit">Click to Submit</button>
+                <h2>Enquire Now</h2>
+                <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
+        
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+        
+                <!-- Phone Input Field with Country Code -->
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+        
+                <select id="service" name="service">
+                    <option value="">Select Service</option>
+                    <option>milking machines</option>
+                    <option>Maize corn silaging</option>
+                    <option>Grass silaging</option>
+                    <option>silage baling</option>
+                    <option>forlage harvester repiar</option>
+                </select>
+        
+                <textarea id="comments" name="comments" placeholder="Comments"></textarea>
+                
+                <button type="submit">Click to Submit</button>
             </form>
+        
+         
     
               
               <!-- Weather Section -->
@@ -267,7 +278,8 @@
     </div>
   </footer>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="../app.js"></script>
+  <script src="sevice.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   
     </body>
     </html>

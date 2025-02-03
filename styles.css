@@ -30,11 +30,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
   z-index: 999;
   position: sticky;
   top: 0;
   font-size: 1.2rem;
+  
 }
 
 .container1 {
@@ -84,7 +85,7 @@ body {
   position: absolute;
   background:  none;
   min-width: 150px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
   
 }
 
@@ -94,17 +95,19 @@ body {
 
 .dropdown-menu li {
   padding: 5px 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
   text-align: center;
 }
 .dropdown-menu li:hover  {
-  background-color: #247ec8;
+  background-color: #247ec891;
   cursor: pointer;
+  
 }
 
 
 .dropdown-menu li a {
   color: #333;
+  
 }
 
 .contact p {
@@ -117,6 +120,10 @@ body {
   .container1 {
     flex-wrap: wrap;
   }
+  
+  .dropdown-menu li{
+    box-shadow: none;
+  }
 
   .navbar ul {
     display: none;
@@ -125,28 +132,33 @@ body {
     top: 100%;
     left: 0;
     width: 40%;
-    background: #004400;
+    background: rgba(0, 0, 0, 0.329);
     z-index: 99;
     padding: 20px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
   }
+  
+    
   .dropdown .dropdown-menu {
-    background: #004400;
+    background: rgba(0, 0, 0, 0.329);
+    
   }
   .navbar ul.active {
     display: flex;
   }
-
+ 
   .navbar_toggle {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+   
   }
 
   .navbar_toggle .bar {
     width: 25px;
     height: 3px;
     margin: 4px auto;
-    background: #1a1a1a;
+    background: #dabf66;;
     
   }
 
@@ -156,7 +168,7 @@ body {
   }
 
   .navbar ul li a {
-    color: wheat;
+    color: #dabf66;;
     font-size: 1.2rem;
   }
 
@@ -165,6 +177,8 @@ body {
 .contact-info span {
   display: block;
 }
+
+
 /* Hero1 Section */
 .hero1 {
   position: relative;
