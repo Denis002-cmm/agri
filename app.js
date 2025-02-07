@@ -230,7 +230,7 @@ const sr = ScrollReveal({
   sr.reveal('.testimonial-box', { origin: 'right', delay: 500 });
   
   sr.reveal('.latest-news h2', { origin: 'bottom' });
-  sr.reveal('.news-card', { origin: 'bottom', interval: 150 });
+  sr.reveal('.card', { origin: 'bottom', interval: 150 });
 
   sr.reveal('.helo-content h1', { origin: 'top',});
   
