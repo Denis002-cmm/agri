@@ -1,3 +1,24 @@
+let lastScrollY = window.scrollY;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                header.classList.add("hidden");
+            } else {
+                // Scrolling up
+                header.classList.remove("hidden");
+            }
+            lastScrollY = window.scrollY;
+        });
+
+
+
+
+
+
+
+
 
 //monile
 const menu = document.querySelector('#mobile-menu');
@@ -48,48 +69,63 @@ new Swiper('.swiper', {
     },
   });
   
-// testmony
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const testimonials = document.querySelectorAll(".testimonial-item");
-    const dots = document.querySelectorAll(".dot");
-  
-    let currentIndex = 0;
-  
-    function updateTestimonials(newIndex) {
-      // Remove the active class from the current testimonial
-      testimonials[currentIndex].classList.remove("active");
-      testimonials[currentIndex].classList.add("exit");
-  
-      // Add active class to the new testimonial
-      setTimeout(() => {
-        testimonials[currentIndex].classList.remove("exit");
-      }, 800); // Wait for the slide-out animation to complete
-  
-      testimonials[newIndex].classList.add("active");
-  
-      // Update dots
-      dots[currentIndex].classList.remove("active");
-      dots[newIndex].classList.add("active");
-  
-      currentIndex = newIndex;
-    }
-  
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const newIndex = parseInt(dot.dataset.index);
-        if (newIndex !== currentIndex) {
-          updateTestimonials(newIndex);
-        }
+  const testimonials = document.querySelectorAll(".testimonial-item");
+  const dots = document.querySelectorAll(".dot");
+  let currentIndex = 0;
+  let interval;
+
+  function showTestimonial(index) {
+      testimonials.forEach((item, i) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateX(100%)";
+          item.style.transition = "all 0.5s ease-in-out";
+          item.style.position = "absolute";
       });
-    });
-  
-    setInterval(() => {
-      const newIndex = (currentIndex + 1) % testimonials.length;
-      updateTestimonials(newIndex);
-    }, 5000); // Auto-slide every 5 seconds
+      testimonials[index].style.opacity = "1";
+      testimonials[index].style.transform = "translateX(0)";
+      testimonials[index].style.position = "relative";
+      dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+      });
+  }
+
+  function nextTestimonial() {
+      testimonials[currentIndex].style.opacity = "0";
+      testimonials[currentIndex].style.transform = "translateX(-100%)";
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      setTimeout(() => {
+          showTestimonial(currentIndex);
+      }, 500);
+  }
+
+  function startAutoSlide() {
+      interval = setInterval(nextTestimonial, 5000);
+  }
+
+  function stopAutoSlide() {
+      clearInterval(interval);
+  }
+
+  dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+          currentIndex = i;
+          showTestimonial(currentIndex);
+          stopAutoSlide();
+          startAutoSlide();
+      });
   });
-  
-  
+
+  showTestimonial(currentIndex);
+  startAutoSlide();
+});
+
+
+
+
+
   //contact form
 // JavaScript Validation and Submission
   const form = document.getElementById("contactForm");
@@ -154,6 +190,21 @@ document.addEventListener("DOMContentLoaded", function () {
               alert("There was an error sending your message. Please try again later.");
           });
   });
+
+
+
+// CSS Fix for Phone Input Width
+const style = document.createElement("style");
+style.innerHTML = `
+  #phone {
+      width: 100% !important;
+      box-sizing: border-box;
+  }
+`;
+document.head.appendChild(style);
+
+
+  
 
 
 // Initialize ScrollReveal

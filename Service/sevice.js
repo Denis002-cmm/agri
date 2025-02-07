@@ -1,3 +1,22 @@
+let lastScrollY = window.scrollY;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                header.classList.add("hidden");
+            } else {
+                // Scrolling up
+                header.classList.remove("hidden");
+            }
+            lastScrollY = window.scrollY;
+        });
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("enquiryForm");
     const phoneInput = document.getElementById("phone");
