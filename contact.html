@@ -5,7 +5,37 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>AG Harvesting Ltd</title>
       <link rel="stylesheet" href="styles.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+        .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-section {
+      text-align: left;
+    }
+
+    .contact-section h3 {
+      color: #0c5e3e;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .contact-section p {
+      margin: 5px 0;
+      color: #333;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+      </style>
     </head>
     <body>
       <header class="main-header" id="header" >
@@ -45,7 +75,7 @@
           </nav>
           <div class="contact">
             <p>
-              <a href="tel:+254725235515" class="phone"><i class="fa-solid fa-phone"></i> +254725235515</a>
+              <a href="tel:+254725235515" class="phone"><i class="fa-solid fa-phone"></i> +254 725 235 515</a>
             </p>
             <p>
               <a class="email1" href="mailto:info@agharvestingltd@hotmail.com"><i class="fa-regular fa-envelope"></i> agharvestingltd@hotmail.com</a>
@@ -88,28 +118,36 @@
           </div>
         </div>
       </section>
+
+
 <!-- Add more branches here -->
-    <section class="branches">
-        <div class="container">
-            <h2>Our Branches</h2>
-            <div class="branch-grid">
-                <div class="branch">
-                  <h3>Eldoret</h3>
-                  <p>Along Eldoret-Illual Road</p>
-                  <p><strong>Phone:</strong> +254757759684</p>
-                  <p><strong>Email:</strong> kenya@agharvesting.co.ke</p>
-                </div>
-            
-                <div class="branch">
-                    <h3>Eldoret</h3>
-                    <p>Along Eldoret-Illual Road</p>
-                    <p><strong>Phone:</strong> +254757759684</p>
-                    <p><strong>Email:</strong> kenya@agharvesting.co.ke</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+<section class="branches">
+  <div class="container">
+    <h2>Our Branches</h2>
+    <div class="contact-container">
+      <div class="contact-section">
+        <h3>Eldoret - Head Office</h3>
+        <p>Along Eldoret-Illual Road.</p>
+        <p>P.O Box 8904-30100</p>
+                <p>Eldoret, Kenya.</p>
+      </div>
+      <div class="contact-section">
+        <h3>Call, SMS, Whatsapp</h3>
+                <p><i class="fa-solid fa-phone"></i> +254 725 235 515</p>
+                <p><i class="fa-solid fa-phone"></i> +254 748 577 670</p>
+                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp</p>
+      </div>
+      <div class="contact-section">
+        <h3>Email</h3>
+                <p><i class="fa-regular fa-envelope"></i> info@agharvestingltd.co.ke</p>
+                <p><i class="fa-regular fa-envelope"></i> sales@agharvestingltd.co.ke</p>
+                <p><i class="fa-regular fa-envelope"></i> hrm@agharvestingltd.co.ke</p>
+                <p><i class="fa-regular fa-envelope"></i> technical@agharvestingltd.co.ke</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section class="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.8248588278889!2d35.37289814912111!3d0.5267382370191408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178103a86349970d%3A0x75afaa89e4e90cb8!2sAgri%20Harvesting%20LTD!5e0!3m2!1sen!2ske!4v1737056228378!5m2!1sen!2ske" frameborder="0" style="width:100%; height:400px;"></iframe>
@@ -156,17 +194,35 @@
     </div>
     <div class="footer-news">
       <h4>News</h4>
-      <ul>
-        <li><a href="#">Forage Production and Pasture Management</a></li>
-        <li><a href="#">Calf and Heifer Nutrition and Feeding</a></li>
-        <li><a href="#">milking systems and techniques</a></li>
-      </ul>
-    </div>
+      <div class="post1">
+        <img src="../img/btv5.jpg" alt="Forage Production">
+        <div class="post-info2">
+          <p>Forage Production</p>
+          <span><i class="fas fa-eye"></i> 42 <i class="fas fa-comments"></i> 0</span>
+        </div>
+      </div>
+      
+      <div class="post1">
+        <img src="../img/btv6.jpg" alt="Dam Liners">
+        <div class="post-info2">
+          <p>Crop Suitable for Silage</p>
+          <span><i class="fas fa-eye"></i> 8 <i class="fas fa-comments"></i> 0</span>
+        </div>
+      </div>
+      
+      <div class="post1">
+        <img src="../img/btv7.jpg" alt="milking systems">
+        <div class="post-info2">
+          <p>milking systems</p>
+          <span><i class="fas fa-eye"></i> 21 <i class="fas fa-comments"></i> 2</span>
+        </div>
+      </div>
+      </div>
     <div class="footer-contact">
       <h4>Contact</h4>
       <ul>
-        <li><i class="fa-solid fa-phone"></i><a href="tel:+254757003239">+254 725235515</a></li>
-        <li><i class="fa-solid fa-phone"></i><a href="tel:+254748577670">+254 748577670</a></li>
+        <li><i class="fa-solid fa-phone"></i><a href="tel:+254757003239">+254 725 235 515</a></li>
+        <li><i class="fa-solid fa-phone"></i><a href="tel:+254748577670">+254 748 577 670</a></li>
         <li><i class="fa-regular fa-envelope"></i><a class="email1" href="mailto:agharvestingltd@hotmail.com">agharvestingltd@hotmail.com</a></li>
         <li><i class="fa-solid fa-location-dot"></i><a href="">Along Eldoret-Illual Road.</a></li>
       </ul>
@@ -178,7 +234,58 @@
 </footer>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="app.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Location Redirect
+    const locationElement = document.querySelector(".contact-section h3");
+    if (locationElement) {
+        locationElement.style.cursor = "pointer";
+        locationElement.addEventListener("click", function () {
+            window.open("https://www.google.com/maps/search/?api=1&query=Eldoret+Kenya", "_blank");
+        });
+    }
 
+    // Call Links
+    document.querySelectorAll(".contact-section p i.fa-phone").forEach(phone => {
+        const parent = phone.parentElement;
+        parent.style.cursor = "pointer";
+        parent.addEventListener("click", function () {
+            const phoneNumber = this.textContent.trim().replace(/\D/g, ""); // Extract numbers
+            window.location.href = `tel:+${phoneNumber}`;
+        });
+    });
+
+    // SMS Links (Double-click)
+    document.querySelectorAll(".contact-section p i.fa-phone").forEach(sms => {
+        const parent = sms.parentElement;
+        parent.addEventListener("dblclick", function () {
+            const phoneNumber = this.textContent.trim().replace(/\D/g, ""); // Extract numbers
+            window.location.href = `sms:+${phoneNumber}`;
+        });
+    });
+
+    // WhatsApp Link
+    const whatsappElement = document.querySelector(".fa-whatsapp").parentElement;
+    if (whatsappElement) {
+        whatsappElement.style.cursor = "pointer";
+        whatsappElement.addEventListener("click", function () {
+            window.open("https://wa.me/254748577670", "_blank");
+        });
+    }
+
+    // Email Links
+    document.querySelectorAll(".contact-section p i.fa-envelope").forEach(email => {
+        const parent = email.parentElement;
+        parent.style.cursor = "pointer";
+        parent.addEventListener("click", function () {
+            const emailAddress = this.textContent.trim();
+            window.location.href = `mailto:${emailAddress}`;
+        });
+    });
+});
+
+
+</script>
   </body>
   </html>
   

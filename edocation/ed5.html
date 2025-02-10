@@ -299,11 +299,29 @@
 </div>
 <div class="footer-news">
 <h4>News</h4>
-<ul>
-  <li><a href="#">Forage Production and Pasture Management</a></li>
-  <li><a href="#">Calf and Heifer Nutrition and Feeding</a></li>
-  <li><a href="#">milking systems and techniques</a></li>
-</ul>
+<div class="post1">
+  <img src="../img/btv5.jpg" alt="Forage Production">
+  <div class="post-info2">
+    <p>Forage Production</p>
+    <span><i class="fas fa-eye"></i> 42 <i class="fas fa-comments"></i> 0</span>
+  </div>
+</div>
+
+<div class="post1">
+  <img src="../img/btv6.jpg" alt="Dam Liners">
+  <div class="post-info2">
+    <p>Crop Suitable for Silage</p>
+    <span><i class="fas fa-eye"></i> 8 <i class="fas fa-comments"></i> 0</span>
+  </div>
+</div>
+
+<div class="post1">
+  <img src="../img/btv7.jpg" alt="milking systems">
+  <div class="post-info2">
+    <p>milking systems</p>
+    <span><i class="fas fa-eye"></i> 21 <i class="fas fa-comments"></i> 2</span>
+  </div>
+</div>
 </div>
 <div class="footer-contact">
 <h4>Contact</h4>
@@ -322,7 +340,33 @@
 <script src="../Service/sevice.js"></script>
 <script src="edocation.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Mapping of IDs to corresponding HTML pages
+    const idToPageMap = {
+        "forage-post": "ed1.html",
+        "what-is-post": "ed2.html",
+        "why-baled-post": "ed3.html",
+        "crop-suitable-post": "ed4.html",
+        "bale-usage-post": "ed5.html",
+        "mailking-system-post": "ed6.html"
+    };
+  
+    // Loop through each mapped ID and add a click event
+    Object.keys(idToPageMap).forEach(id => {
+        const post = document.getElementById(id);
+        if (post) {
+            post.addEventListener("click", function () {
+                window.location.href = idToPageMap[id];
+            });
+            post.style.cursor = "pointer"; // Indicate it's clickable
+        }
+    });
+  });
+   
+      
+    </script>
 </body>
 </html>
 
