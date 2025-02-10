@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure Request</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG Harvesting Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Include Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+        }
+
+        /* Brochure Request Section */
+        .brochure-request {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 98%;
+            padding-top: 40px;
+        }
+
+        .brochure-request h2 {
+            font-size: 20px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: darkred;
+        }
+
+        /* Speech bubble effect */
+        .brochure-request::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to bottom, white, rgba(0, 0, 0, 0.1));
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+    
+
+        /* Main content */
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Model Selection */
+        .model-selection{
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+        }
+        .category-list {
+            width: 300px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Individual Category Item */
+        .category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        /* Active Category (Highlighted) */
+        .category.active {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Inactive Categories (Grayscale + Low Opacity) */
+        .category:not(.active) img {
+            opacity: 0.3;
+            filter: grayscale(100%);
+        }
+
+        /* Hover Effect */
+        .category:hover {
+            background: #f0f0f0;
+        }
+
+        /* Category Images */
+        .category img {
+            width: 50px;
+            height: auto;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Tractor Display Section */
+        .tractor-display {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .tractor-section {
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tractor-section.active {
+            display: flex; /* Show only active section */
+        }
+
+        /* Tractor Image */
+        .tractor-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Model Name */
+        .tractor-info h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Slogan */
+        .tractor-info p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            background-color: #c00;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #900;
+        }
+    </style>
+</head>
+<body>
+    
+      <div class="brochure-request">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2>Request a Brochure</h2>
+    </div>
+
+    <div class="content">
+        <h2>Choose your model to find out more.</h2>
+        <section class="model-selection">
+            <div class="category-list">
+                <div class="category active" data-target="tractor-section">
+                    <span>cultvation Services</span>
+                    <img src="img/cult1.jpg" alt="Tractor">
+                </div>
+                <div class="category" data-target="combine-section">
+                    <span>planting Services</span>
+                    <img src="img/plat1.jpg" alt="Combine Harvester">
+                </div>
+                <div class="category" data-target="balers-section">
+                    <span>Spraying Services</span>
+                    <img src="img/p4.jpeg" alt="Balers">
+                </div>
+                <div class="category" data-target="hay-section">
+                    <span>Harvesting Services</span>
+                    <img src="img/btv5.jpg" alt="Hay and Forage">
+                </div>
+                <div class="category" data-target="Baling-section">
+                    <span>Baling Services</span>
+                    <img src="img/hayb1.png" alt="Baling Services">
+                </div>
+                <div class="category" data-target="Repair-section">
+                    <span>Repair Services</span>
+                    <img src="img/btv7.png" alt="Repair Services">
+                </div>
+            </div>
+
+            <!-- Tractor Display Sections -->
+            <div class="tractor-display">
+                <div class="tractor-section active" id="tractor-section">
+                    <img src="img/cult1.jpg" alt="MF 7700 S Tractor" class="tractor-image">
+                    <div class="tractor-info">
+                        <h2>Cultivation Services</h2>
+                        <p>Prepare your land for success with precision cultivation. Our advanced machinery ensures optimal soil conditions, improving yield and efficiency for every crop cycle.</p>
+                        <button class="download-btn" id="downloadBtn">Download Brochure</button>
+                    </div>
+                </div>
+                
+                <div class="tractor-section" id="combine-section">
+                    <img src="img/plat1.jpg" alt="Combine Harvester" class="tractor-image">
+                    <div class="tractor-info">
+                        <h2>Planting Services</h2>
+                        <p>Maximize crop growth with our state-of-the-art planting technology. We guarantee uniform seed placement and optimal spacing for better germination and higher yields.</p>
+                        <button class="download-btn" id="downloadBtn">Download Brochure</button>
+                    </div>
+                </div>
+                
+                <div class="tractor-section" id="balers-section">
+                    <img src="img/p4.jpeg" alt="Balers" class="tractor-image">
+                    <div class="tractor-info">
+                        <h2>Spraying Services</h2>
+                        <p>Protect your crops with precision spraying. Our advanced techniques ensure even application of fertilizers and pesticides, reducing waste and improving plant health.</p>
+                        <button class="download-btn" id="downloadBtn">Download Brochure</button>
+                    </div>
+                </div>
+                
+                <div class="tractor-section" id="hay-section">
+                    <img src="img/btv5.jpg" alt="Hay and Forage" class="tractor-image">
+                    <div class="tractor-info">
+                        <h2>Harvesting Services</h2>
+                        <p>Experience fast and efficient harvesting with our top-tier equipment. We ensure minimal crop loss and maximum quality, bringing your hard work to a rewarding finish.</p>
+                        <button class="download-btn" id="downloadBtn">Download Brochure</button>
+                    </div>
+                </div>
+                
+                <div class="tractor-section" id="Baling-section">
+                    <img src="img/hayb1.png" alt="Baling Services" class="tractor-image">
+                    <div class="tractor-info">
+                        <h2>Baling Services</h2>
+                        <p>Effortless baling for your hay and straw needs. Our high-performance balers create dense, durable bales for easy handling, storage, and transport.</p>
+                        <button class="download-btn" id="downloadBtn">Download Brochure</button>
+                    </div>
+                </div>
+                
+                <div class="tractor-section" id="Repair-section">
+                    <img src="img/btv7.png" alt="Repair Services" class="tractor-image">
+                    <div class="tractor-info">
+                        <h2>Repair Services</h2>
+                        <p>Keep your equipment running smoothly with our expert repair services. From routine maintenance to emergency fixes, we ensure minimal downtime and maximum productivity.</p>
+                        <button class="download-btn" id="downloadBtn">Download Brochure</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+     <!-- Contat Section -->
+     <section class="contat">
+        <div class="container">
+            <div class="left">
+                <div class="circle-img">
+                    <img src="img/cowpic1.jpg" alt="Planting">
+                </div>
+                <div>
+                    <h3>Contact Now</h3>
+                    <h2>Leave Us A Message</h2>
+                    <p>Inquire from us about any  Planting services, Cultivation services, Spraying services, Harvesting services, Tractor & agri equipment repair services and their quotations.</p>
+                </div>
+            </div>
+            <div class="right">
+                <!-- Form -->
+               <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="894ff7de-392b-4c72-8b9f-6eabdefbb3de">
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+                <textarea name="message" id="message" placeholder="Write Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+                <p id="formStatus" style="color: red; display: none;">Please fill out all fields correctly.</p>
+            </form>
+            </div>
+        </div>
+    </section>
+    <!--whatsapp-->
+  <div class="whatsapp-btn-container">
+    <a class="whatsapp-btn" href="https://wa.me/254757003239"><i class="fab fa-whatsapp"></i></a>
+    <span>Contact Us</span>
+  </div>
+  
+  
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+      <div class="footer-logo">
+        <h3>AG Harvesting Ltd</h3>
+        <p>AG Harvesting kenya Limited is a leading company that provide Top Quality Agricultural Services in Kenya and more in East Africa.</p>
+      </div>
+      <div class="social-media">
+        <h4>Social Media</h4>
+        <ul>
+          <a href="http://www.facebook.com/denoh.mugambi.92"><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a ><i class="fa-brands fa-youtube"></i></a>
+          <a class="whatapp" href="https://wa.me/254757003239"><i class="fa-brands fa-whatsapp"></i></a>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="Services.html">Our Services</a></li>
+          <li><a href="for-sale.html">For Sale</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="education.html">Farm Education</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+          <li><a href="career.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-news">
+        <h4>News</h4>
+        <ul>
+          <li><a href="#">Forage Production and Pasture Management</a></li>
+          <li><a href="#">Calf and Heifer Nutrition and Feeding</a></li>
+          <li><a href="#">milking systems and techniques</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa-solid fa-phone"></i><a href="tel:+254757003239">+254 725235515</a></li>
+          <li><i class="fa-solid fa-phone"></i><a href="tel:+254748577670">+254 748577670</a></li>
+          <li><i class="fa-regular fa-envelope"></i><a class="email1" href="mailto:agharvestingltd@hotmail.com">agharvestingltd@hotmail.com</a></li>
+          <li><i class="fa-solid fa-location-dot"></i><a href="">Along Eldoret-Illual Road.</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 by AG Havesting Kenya  Ltd. <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+  
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("closeBtn").addEventListener("click", function() {
+            window.location.href = "index.html"; // Redirects to index.html
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const categories = document.querySelectorAll(".category");
+            const sections = document.querySelectorAll(".tractor-section");
+
+            categories.forEach(category => {
+                category.addEventListener("click", () => {
+                    // Remove active class from all categories
+                    document.querySelector(".category.active").classList.remove("active");
+                    category.classList.add("active");
+
+                    // Hide all sections
+                    sections.forEach(section => section.classList.remove("active"));
+
+                    // Show the corresponding section
+                    const targetId = category.dataset.target;
+                    document.getElementById(targetId).classList.add("active");
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const downloadBtn = document.getElementById("downloadBtn");
+    
+            document.querySelectorAll(".category").forEach(category => {
+                category.addEventListener("click", () => {
+                    const targetId = category.dataset.target;
+                    const brochureLinks = {
+                        "tractor-section": "brochures/cultivation.pdf",
+                        "combine-section": "brochures/planting.pdf",
+                        "balers-section": "brochures/spraying.pdf",
+                        "hay-section": "brochures/harvesting.pdf",
+                        "baling-section": "brochures/baling.pdf",
+                        "repair-section": "brochures/repair.pdf"
+                    };
+    
+                    downloadBtn.onclick = function () {
+                        window.location.href = brochureLinks[targetId];
+                    };
+                });
+            });
+        });
+        
+    </script>
+    
+
+</body>
+</html>

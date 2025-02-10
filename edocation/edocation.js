@@ -12,6 +12,23 @@ let lastScrollY = window.scrollY;
             lastScrollY = window.scrollY;
         });
 
+// logo
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the logo div by its ID
+  const logo = document.getElementById("logo");
+
+  // Check if the element exists
+  if (logo) {
+      // Add a click event listener
+      logo.addEventListener("click", function () {
+          // Redirect to index.html
+          window.location.href = "../index.html";
+      });
+
+      // Change the cursor to indicate it's clickable
+      logo.style.cursor = "pointer";
+  }
+});
 
 
 
@@ -171,4 +188,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Mapping of IDs to corresponding HTML pages
+  const idToPageMap = {
+      "forage-post": "ed1.html",
+      "what-is-post": "ed2.html",
+      "why-baled-post": "ed3.html",
+      "crop-suitable-post": "ed4.html",
+      "bale-usage-post": "ed5.html",
+      "mailking-system-post": "ed6.html"
+  };
 
+  // Loop through each mapped ID and add a click event
+  Object.keys(idToPageMap).forEach(id => {
+      const post = document.getElementById(id);
+      if (post) {
+          post.addEventListener("click", function () {
+              window.location.href = idToPageMap[id];
+          });
+          post.style.cursor = "pointer"; // Indicate it's clickable
+      }
+  });
+});

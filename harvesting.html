@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Include Swiper's CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        
+        /* Brochure Request Section */
+        .brochure-request {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 98%;
+            padding-top: 40px;
+        }
+
+        .brochure-request h2 {
+            font-size: 20px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: darkred;
+        }
+
+        /* Speech bubble effect */
+        .brochure-request::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to bottom, white, rgba(0, 0, 0, 0.1));
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+        .services-grid{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure-request">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2>HARVESTING SERVICES</h2>
+    </div>
+    <div class="services-grid ">
+     <!-- Service Item 1 -->
+     <div class="service-item">
+      <a href="Service/forageH.html"><img src="img/back3.jpg" alt="Silage Baling"></a>
+      <div class="service-title">
+        <div class="card-body">
+          <div class="date">
+            <i class="fa-solid fa-tractor"></i>
+          </div>
+        </div>
+        <a href="Service/forageH.html">Maize (Corn) Forlage</a>
+      </div>
+    </div>
+      
+      <!-- Service Item 2 -->
+      <div class="service-item">
+        <a href="Service/forageH.html"><img src="img/hayb1.png" alt="Hay-Baling"></a>
+        <div  class="service-title">
+          <div class="card-body">
+            <div class="date">
+              <i class="fa-solid fa-tractor"></i>
+            </div>
+          </div>
+          <a href="Service/forageH.html">Grass Forlage</a>
+        </div>
+    </div>
+    
+      
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="app.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+      
+    
+        <!-- JavaScript -->
+        <script>
+            document.getElementById("closeBtn").addEventListener("click", function() {
+                window.location.href = "index.html"; // Redirects to index.html
+            });
+        </script>
+</body>
+</html>

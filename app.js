@@ -12,9 +12,25 @@ let lastScrollY = window.scrollY;
             lastScrollY = window.scrollY;
         });
 
+         // logo 
 
-
-
+        document.addEventListener("DOMContentLoaded", function () {
+          // Get the logo div by its ID
+          const logo = document.getElementById("logo");
+      
+          // Check if the element exists
+          if (logo) {
+              // Add a click event listener
+              logo.addEventListener("click", function () {
+                  // Redirect to index.html
+                  window.location.href = "index.html";
+              });
+      
+              // Change the cursor to indicate it's clickable
+              logo.style.cursor = "pointer";
+          }
+      });
+      
 
 
 
