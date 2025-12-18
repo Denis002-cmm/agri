@@ -73,7 +73,8 @@ nextBtn.addEventListener("click", () => {
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlider();
-}, 7000);
+}, 6000);
+
 
 
 //monile
